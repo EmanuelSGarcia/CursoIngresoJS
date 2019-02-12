@@ -3,9 +3,8 @@ y luego mostrarlo por 'Alert' al presionar el botón  'mostrar'*/
 function mostrar()
 {
 	var nombre;
-	elNombre.value="Emilio Garrabarena";
-	nombre = alert ("Bienvenido");
-
+	nombre = document.getElementById('elNombre').value;
+	alert(nombre);
 
 }
 

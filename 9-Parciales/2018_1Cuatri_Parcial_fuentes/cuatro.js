@@ -1,71 +1,33 @@
 function mostrar()
-{	
-	var cantidad;
-	var precio;
-	var descuento;
-	var precioDescuento;
-	var tipoDePago;
-	var recargo;
-	var recargoFinal;
-	
-	cantidad = prompt("¿Cuantos productos compro?");
-	cantidad = parseInt(cantidad)
+{
+	var numero1=prompt("Ingrese el 1º numero");
+	var numero2=prompt("Ingrese el 2º numero");
+	var resultado;
 
-	precio = prompt("Ingrese el precio de su/s productos sumados: ");
-	precio = parseInt(precio);
-
-	if (cantidad ==1 ) 
+	if (numero1==numero2) 
 	{
-
-		tipoDePago = prompt("¿Que medio de pago utilizara?" , "Tarjeta/Efectivo");
-		
-		if (tipoDePago == "Tarjeta")
-		{ 	
-
-			else{alert("Usted estaria abonando: " + precio);
-				
-			}	
-		}		
+		alert(numero1 +" "+ numero2);
 	}
-
-	if (cantidad > 1 && precio < 1999) 
+	else
 	{
-
-		descuento = precio * 10 / 100;
-		descuento = parseInt(descuento);
-
-		precioDescuento= precio - descuento;
-
-		alert("Usted estaria abonando: " + precio +" ,Aplicando su descuento valido del 10%, terminaria pagando: " + precioDescuento)
-
-	}
-
-	if(cantidad > 1 && precio >= 2000)
-	 {
-	 	tipoDePago = prompt("¿Que medio de pago utilizara?" , "Tarjeta/Efectivo");
-
-	 	if (tipoDePago == "Efectivo") 
-	 	{
-	 		
-		descuento = precio * 15 / 100;
-		descuento = parseInt(descuento);
-
-		precioDescuento= precio - descuento;
-
-		alert("Usted estaria abonando: " + precio +" ,Aplicando su descuento valido del 15%, terminaria pagando: " + precioDescuento)
-	 	}
-	 	if (tipoDePago == "Tarjeta") 
-	 	{
-	 		descuento = precio * 15 / 100;
-		descuento = parseInt(descuento);
-
-		precioDescuento= precio - descuento;
-		recargo= precio *10/100;
-		recargo= parseInt(recargo);
-
-		recargoFinal = precio + recargo
-
-		alert("Usted estaria abonando: " + precio +" ,Aplicando su descuento valido del 15%, terminaria pagando: " + precioDescuento +" .Al abonar con tarjeta recive una recarga de: " + recargo +" ,Con un precio final de: " +recargoFinal);
-	 	}
-	 }
+		numero1=parseInt(numero1);
+		numero2=parseInt(numero2);
+		if (numero1>numero2) 
+		{
+			resultado=numero1-numero2;
+			alert("la resta es "+resultado);
+		}
+		else
+		{
+			resultado=numero1+numero2;
+			if (resultado>10) 
+			{
+				alert("la suma es "+resultado+" y supero el 10");
+			}
+			else
+			{
+				alert("la suma es "+resultado);
+			}
+		}
+	}	
 }

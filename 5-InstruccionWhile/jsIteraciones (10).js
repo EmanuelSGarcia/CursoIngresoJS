@@ -1,68 +1,63 @@
 function mostrar()
 {
-
-	var contador=0;
-	//declarar contadores y variables 
-	var numero;
-	var positivo=0;
-	var negativo=0;
-	var contadorPositivo=0;
-	var contadorCeros=0;
-	var contadorNegativo=0;
+//declarar contadores y variables
 	var respuesta=true;
-	var promedioPositivo=0;
-	var promedioNegativo=0;
-	var diferencia;
+	var numero;
+	var acumuladorPositivos=0;
+	var acumuladorNegativos=0;
+	var contadorCero=0;
+	var contadorPositivos=0;
+	var contadorNegativos=0;
+	var promedioPositivos;
 	var contadorPares=0;
+	var promedioNegativos;
+	var diferencia;
 
-
-
-	while(respuesta==true)
+	while(respuesta!=false)
 	{
-		numero=prompt("Ingrese el numero.");
+		numero=prompt("Ingrese su numero");
 		numero=parseInt(numero);
-
-		if (numero==0) 
+		while(isNaN(numero)==true)
 		{
-			contadorCeros++;
+			numero=prompt("Su numero ingresado fue incorrecto,ingrese nuevamente.");
+			numero=parseInt(numero);
+		}
+
+		if (numero == 0) 
+		{
+			contadorCero++;
 		}
 		else
-		{	
+		{
 			if (numero>0) 
 			{
-				positivo=positivo+numero;
-				contadorPositivo++;
-				promedioPositivo=positivo/contadorPositivo;
+				acumuladorPositivos=acumuladorPositivos+numero;
+				contadorPositivos++;
+				promedioPositivos=acumuladorPositivos/contadorPositivos;
 			}
-			
 			else
 			{
-				negativo=negativo+numero;
-				contadorNegativo++;
-				promedioNegativo=negativo/contadorNegativo;
-				
-				if (numero%2==0) 
-				{
-					contadorPares++
-				}
+				acumuladorNegativos=acumuladorNegativos+numero;
+				contadorNegativos++;
+				promedioNegativos=acumuladorNegativos/contadorNegativos;
+			}//if (numero>0)
+			if (numero%2==0) 
+			{
+				contadorPares++
 			}
-
-		}		
+		}//if (numero == 0)
 		respuesta=confirm("¿Desea ingresar otro numero?");
-		contador++;
-	
-	}
+	}//while(respuesta!=false)
 
-	diferencia=positivo+negativo
+	diferencia=acumuladorPositivos+acumuladorNegativos;
 
-	document.write("<br>Suma de positivos "+positivo);
-	document.write("<br>Numeros positivos ingresados "+contadorPositivo);
-	document.write("<br>Promedio de numeros positivos "+promedioPositivo);
-	document.write("<br>Suma de negativos "+negativo);
-	document.write("<br>Numeros negativos ingresados "+contadorNegativo);
-	document.write("<br>Promedio de numeros negativos "+promedioNegativo);
-	document.write("<br>Cantidad de 0 ingresados "+contadorCeros);
+	document.write("<br>Suma de los negativos "+acumuladorNegativos);
+	document.write("<br>Suma de los positivos "+acumuladorPositivos);
+	document.write("<br>Cantidad de positivos "+contadorPositivos);
+	document.write("<br>Cantidad de negativos "+contadorNegativos);
+	document.write("<br>Cantidad de ceros "+contadorCero);
 	document.write("<br>Cantidad de números pares "+contadorPares);
-	document.write("<br>Diferencia entre numeros negativos y positivos "+ diferencia)
-
+	document.write("<br>Promedio de positivos "+promedioPositivos);
+	document.write("<br>Promedios de negativos "+promedioNegativos);
+	document.write("<br>Diferencia entre positivos y negativos "+diferencia);
 }//FIN DE LA FUNCIÓN

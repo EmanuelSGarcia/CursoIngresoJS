@@ -1,27 +1,28 @@
 function mostrar()
 {
 	//Genero el número RANDOM entre 1 y 10 
-	
-	var numeroRandom;	
-	var mensaje;
+var nota;
+var mensaje;
 
-	numeroRandom= Math.floor((Math.random() * 10) + 1);
-	numeroRandom= parseInt(numeroRandom);
+nota=Math.floor((Math.random() * 10) + 1);
 
-	
-	if (numeroRandom > 8)
+	if (nota<4) 
 	{
-		mensaje= " EXCELENTE";
+		mensaje="Vamos, la proxima se puede";
 	}
-	else 
-		if (numeroRandom < 4) 
+	else
+	{
+		if (nota>8) 
 		{
-			mensaje= " Vamos, la proxima se puede";
+			mensaje="EXCELENTE";
 		}
-		else 
-			{
-				mensaje= " APROBÓ";
-			}
-	alert(numeroRandom + mensaje);
+		else
+		{
+			mensaje="APROBÓ";
+		}
+	}
+
+alert(mensaje);
+console.log(nota);
 
 }//FIN DE LA FUNCIÓN

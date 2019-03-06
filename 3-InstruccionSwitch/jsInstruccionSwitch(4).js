@@ -4,8 +4,7 @@ function mostrar()
 var mesDelAño = document.getElementById('mes').value;
 var mensaje;
 //alert (mesDelAño);
-	
-	
+
 	switch(mesDelAño)
 	{
 		case "Febrero":
@@ -22,7 +21,6 @@ var mensaje;
 					break;
 	}
 
-	alert (mensaje);
-
+	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN
